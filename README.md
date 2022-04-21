@@ -26,4 +26,24 @@ public class Mercuryas {
 		driver.findElement(By.name("phone")).sendKeys("123456789");
 		driver.findElement(By.id("userName")).sendKeys("hhhh@gmail.com");
 		}
-    }
+    //address
+		@Test
+		public void c_address() {
+		driver.findElement(By.name("address1")).sendKeys("Chennai");
+		driver.findElement(By.xpath("//b[text()='City:']/following::input[1]")).sendKeys("Chennai");
+		driver.findElement(By.name("state")).sendKeys("TamilNadu");
+		driver.findElement(By.name("postalCode")).sendKeys("600028");
+		Select drpdown=new Select (driver.findElement(By.name("country")));
+		drpdown.selectByVisibleText("GERMANY");
+		}
+		//userinforamtion
+		@Test
+		public void e_userInformation() {
+		driver.findElement(By.id("email")).sendKeys("priya@gmail.com");
+		driver.findElement(By.name("password")).sendKeys("123456789");
+		driver.findElement(By.name("confirmPassword")).sendKeys("123456789");
+		driver.findElement(By.name("submit")).click();
+	}
+
+}
+
